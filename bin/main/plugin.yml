@@ -1,0 +1,30 @@
+name: AuditCord
+version: "${version}"
+main: com.github.tejaslamba2006.auditcord.AuditCord
+api-version: 1.19
+author: tejaslamba2006
+description: "Lightweight client brand detection plugin - No dependencies required!"
+website: "https://github.com/tejaslamba2006"
+softdepend: []
+commands:
+  auditcord:
+    description: "AuditCord main command"
+    usage: "/auditcord [reload|info|list|stats|help]"
+    permission: auditcord.admin
+    aliases: [ac, audit]
+permissions:
+  auditcord.admin:
+    description: "Access to all AuditCord commands"
+    default: op
+  auditcord.notifications:
+    description: "Receive client detection notifications"
+    default: op
+  auditcord.staff:
+    description: "Marks player as staff member"
+    default: false
+  auditcord.alert:
+    description: "Receive client brand detection alerts"
+    default: op
+  auditcord.bypassblacklist:
+    description: "Bypass client brand blacklist/whitelist restrictions"
+    default: false

@@ -1,0 +1,92 @@
+# AuditCord Configuration
+# Client brand and mod detection plugin
+
+# Debug mode - Enable detailed logging
+debug: true
+
+# Alert settings - Show when players join with their client brand
+# Players with the permission auditcord.alert will see these messages
+alert:
+  enabled: true
+  message: "&8[&bAuditCord&8] &e%player% &7joined with client: &f%brand%"
+
+# Command messages
+get-message: "&8[&bAuditCord&8] &e%player% &7is using: &f%brand%"
+list-header: "&8[&bAuditCord&8] &fPlayer List &7(Page %page%/%total%):"
+list-message: "&7• &e%player%&7: &f%brand%"
+reload-message: "&8[&bAuditCord&8] &aConfiguration reloaded successfully!"
+
+# Client blacklist - Players using these clients will be kicked
+# Use ** as wildcard to match any characters after the prefix
+blacklist:
+  - "disallowed_client"
+  - "hacked**"
+  - "cheat**"
+  - "xray**"
+  - "grief**"
+
+case-sensitive: false # If true, client brand matching is case-sensitive
+
+# Client whitelist - Only players using these clients are allowed (if use-whitelist is true)
+# Use ** as wildcard to match any characters after the prefix
+use-whitelist: false # If true, the whitelist is used
+whitelist:
+  - "vanilla"
+  - "forge"
+  - "fabric"
+  - "lunarclient**"
+  - "quilt"
+
+# Client brand replacements for brand display
+# Add any client brand names as keys and their display names as values
+# If no replacement is found, the original brand name will be used
+# Case sensitivity on keys is dependent on your "case-sensitive" setting
+replacements:
+  vanilla: "Completely Vanilla Client"
+  fabric: "Fabric Modloader"
+  forge: "Forge Client"
+  Geyser: "Bedrock Player!"
+  lunarclient**: "Lunar Client"
+  badlion: "BadLion Client"
+  "Feather Fabric": "Feather Client"
+  labymod: "LabyMod"
+  quilt: "Quilt"
+
+# Kick message for blacklisted (or unwhitelisted) clients
+kick-message: "&c&lYour client is not allowed on this server!\n&7Please use a different client to join."
+
+# Discord Integration
+log-to-discord: false
+
+# Discord webhook settings
+discord:
+  webhook-url: ""
+  # Example: "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"
+
+# Detection settings
+detection:
+  # Enable client brand detection
+  detect-client-brand: true
+
+  # Enable mod detection
+  detect-mods: true
+
+  # Enable custom client detection (Lunar, Badlion, etc.)
+  detect-custom-clients: true
+
+  # Enable suspicious activity detection
+  detect-suspicious: true
+
+# Logging settings
+logging:
+  # Log to console
+  console: true
+
+  # Send notifications to ops/staff
+  notify-staff: true
+
+  # Staff login alerts
+  staff-alerts: true
+
+  # Suspicious activity alerts
+  suspicious-alerts: true
